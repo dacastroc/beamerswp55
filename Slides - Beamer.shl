@@ -1,0 +1,927 @@
+%\usecolortheme{albatross}
+%\usecolortheme{crane}
+
+
+\documentclass[beamer,notes=show,compress]{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[latin1]{inputenc}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=latex2.dll}
+%TCIDATA{Version=5.50.0.2890}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Tuesday, April 18, 2006 14:22:04}
+%TCIDATA{LastRevised=Tuesday, April 18, 2006 14:03:43}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Other Documents\SW\Slides - Beamer">}
+%TCIDATA{CSTFile=beamer.cst}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+\usetheme{Warsaw}
+\useinnertheme{rounded}
+\useoutertheme{shadow}
+\usefonttheme{professionalfonts}
+\beamertemplateshadingbackground{blue!50}{black!30}
+\input{tcilatex}
+\begin{document}
+
+\title{Creating Beamer presentations in \textsl{Scientific WorkPlace}\/ and 
+\textsl{Scientific Word}}
+\subtitle{Presentaciones usando 
+%TCIMACRO{\TeXButton{PDFLaTeX}{\sc{PDF}\LaTeX{}}}%
+%BeginExpansion
+\sc{PDF}\LaTeX{}%
+%EndExpansion
+}
+\author{Darío A. Castro Castro}
+\institute{Universidad del Norte}
+\date{ 
+%TCIMACRO{\TeXButton{today}{\today}}%
+%BeginExpansion
+\today%
+%EndExpansion
+}
+\maketitle
+
+%TCIMACRO{%
+%\TeXButton{TOC}{\begin{frame}
+%\frametitle{Outline}
+%\tableofcontents[part=1,pausesections]
+%\end{frame}
+%\AtBeginSubsection[]
+%{
+%\begin{frame}<beamer>
+%\frametitle{Outline}
+%\tableofcontents[current,currentsubsection]
+%\end{frame}
+%}
+%\part<presentation>{Main Talk}}}%
+%BeginExpansion
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents[part=1,pausesections]
+\end{frame}
+\AtBeginSubsection[]
+{
+\begin{frame}<beamer>
+\frametitle{Outline}
+\tableofcontents[current,currentsubsection]
+\end{frame}
+}
+\part<presentation>{Main Talk}%
+%EndExpansion
+
+%TCIMACRO{%
+%\TeXButton{pgf}{\pgfdeclaremask{unorte}{beamer-unorte-logo-mask}
+%\pgfdeclaremask{unal}{borde_escudo_un-mask}
+%\pgfdeclaremask{obs}{beamer-obs-logo-mask}
+%\pgfdeclaremask{rel}{beamer-rel-logo-mask}
+%\pgfdeclaremask{ein}{beamer-ein-logo-mask}
+%\pgfdeclareimage[mask=rel,width=0.6cm]{i-relativity}{i-relativity}
+%\pgfdeclareimage[mask=ein,width=1.3cm]{einstein}{einstein}
+%\pgfdeclareimage[mask=unorte,width=0.6cm]{unorte-logo}{beamer-unorte-logo}
+%\pgfdeclareimage[mask=obs,width=1.6cm]{obs-logo}{beamer-obs-logo}
+%\pgfdeclareimage[mask=unal,width=2.2cm]{borde_escudo_un}{borde_escudo_un}
+%\titlegraphic{\hbox{\hbox to 2.5cm{\hfil\pgfuseimage{obs-logo}}\hskip
+%5.5cm\hbox{\pgfuseimage{borde_escudo_un}}}\vskip-1.19cm\hbox{\hbox
+%to 6cm{\hfil\pgfuseimage{einstein}}}}
+%}}%
+%BeginExpansion
+\pgfdeclaremask{unorte}{beamer-unorte-logo-mask}
+\pgfdeclaremask{unal}{borde_escudo_un-mask}
+\pgfdeclaremask{obs}{beamer-obs-logo-mask}
+\pgfdeclaremask{rel}{beamer-rel-logo-mask}
+\pgfdeclaremask{ein}{beamer-ein-logo-mask}
+\pgfdeclareimage[mask=rel,width=0.6cm]{i-relativity}{i-relativity}
+\pgfdeclareimage[mask=ein,width=1.3cm]{einstein}{einstein}
+\pgfdeclareimage[mask=unorte,width=0.6cm]{unorte-logo}{beamer-unorte-logo}
+\pgfdeclareimage[mask=obs,width=1.6cm]{obs-logo}{beamer-obs-logo}
+\pgfdeclareimage[mask=unal,width=2.2cm]{borde_escudo_un}{borde_escudo_un}
+\titlegraphic{\hbox{\hbox to 2.5cm{\hfil\pgfuseimage{obs-logo}}\hskip
+5.5cm\hbox{\pgfuseimage{borde_escudo_un}}}\vskip-1.19cm\hbox{\hbox
+to 6cm{\hfil\pgfuseimage{einstein}}}}
+%
+%EndExpansion
+
+\section{Creating Beamer presentations inScientific WorkPlace and Scientific
+Word}
+
+\subsection{What is Beamer?}
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{What is Beamer?}
+
+\QTR{framesubtitle}{Presentations with PDFLaTeX}
+
+\begin{itemize}
+\item Beamer is a 
+%TCIMACRO{\TeXButton{LaTeX}{\LaTeX{}} }%
+%BeginExpansion
+\LaTeX{}
+%EndExpansion
+package that produces beautiful \textsc{pdf}%
+%TCIMACRO{\TeXButton{LaTeX}{\LaTeX{}} }%
+%BeginExpansion
+\LaTeX{}
+%EndExpansion
+presentations and transparency slides.\pause
+
+\item Beamer presentations feature\pause
+
+\begin{itemize}
+\item \textsc{pdf}%
+%TCIMACRO{\TeXButton{LaTeX}{\LaTeX{}} }%
+%BeginExpansion
+\LaTeX{}
+%EndExpansion
+output.\pause
+
+\item Global and local control of layout, color, and fonts. \href{einstein.jpg}%
+{adad}\href{run: C:/pruebabeamerswp55/einstein.jpg}{logo}\pause
+
+\item List items that can appear one at a time.\pause
+
+\item Overlays and dynamic transitions between slides.\pause
+
+\item Standard 
+%TCIMACRO{\TeXButton{LaTeX}{\LaTeX{}} }%
+%BeginExpansion
+\LaTeX{}
+%EndExpansion
+constructs.\pause
+
+\item Typeset text, mathematics $\frac{-b\pm \sqrt{b^{2}-4ac}}{2a}$, and
+graphics
+
+\FRAME{ftbphF}{1.4849in}{0.5768in}{0pt}{}{\Qlb{logo2}}{msi_logo2.jpg}{%
+\special{language "Scientific Word";type "GRAPHIC";maintain-aspect-ratio
+TRUE;display "USEDEF";valid_file "F";width 1.4849in;height 0.5768in;depth
+0pt;original-width 2.4025in;original-height 0.9167in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";filename
+'C:/swp55/Graphics/MSI_logo2.jpg';file-properties "XNPEU";}}
+\end{itemize}
+\end{itemize}
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\subsection{Basic tasks in creating a Beamer presentation}
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Basic tasks in creating a Beamer presentation}
+
+\begin{enumerate}
+\item Start a new document with the Slides - Beamer shell in the Other
+Documents shell directory.
+
+\item Change to the TrueTeX pdfTeX formatter.
+
+\item Choose a presentation theme to define the appearance of the
+presentation.
+
+\item Create a frame for each slide in the presentation.
+
+\item Organize information in lists and columns.
+
+\item Create transitions between frames.
+
+\item Add graphics and animations.
+
+\item Typeset the presentation with \textsc{pdf}\LaTeX.
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\subsection{Using Beamer with Scientific WorkPlace and Scientific Word}
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Using Beamer with Scientific WorkPlace and Scientific Word}
+
+\begin{enumerate}
+\item Choose the TrueTeX pdfTeX formatter:
+
+Choose \textbf{Typeset+Expert Settings}, select the \textbf{PDF Format
+Settings} tab, and choose the \textbf{TrueTeX pdfTeX} formatter.
+
+\item Typeset the completed presentation as a PDF\ file:
+
+Choose \textbf{Typeset+Preview PDF} or \textbf{Typeset+Print PDF}.
+
+\item Display the presentation with Acrobat Reader.
+\end{enumerate}
+
+To produce a sample presentation, typeset this shell document with \textsc{%
+pdf}%
+%TCIMACRO{\TeXButton{LaTeX}{\LaTeX{}} }%
+%BeginExpansion
+\LaTeX{}
+%EndExpansion
+.
+
+%TCIMACRO{\TeXButton{Transition: Dissolve}{\transdissolve}}%
+%BeginExpansion
+\transdissolve%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Texto en cajas I}
+
+Existen varias formas de colocar texto en cajas
+
+%TCIMACRO{\TeXButton{BeginColumns}{\begin{columns}}}%
+%BeginExpansion
+\begin{columns}%
+%EndExpansion
+%TCIMACRO{\TeXButton{Column}{\column{10.5cm}}}%
+%BeginExpansion
+\column{10.5cm}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{\begin{block}}{\begin{block}{Bloque}}}%
+%BeginExpansion
+\begin{block}{Bloque}%
+%EndExpansion
+
+Un bloque
+
+%TCIMACRO{\TeXButton{\end{block}}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndColumns}{\end{columns}}}%
+%BeginExpansion
+\end{columns}%
+%EndExpansion
+
+\begin{example}
+Un ejemplo\pause
+\end{example}
+
+\begin{definition}
+Una definición\pause
+\end{definition}
+
+\begin{theorem}
+Un teorema\pause
+\end{theorem}
+
+\begin{proof}
+La prueba del teorema
+\end{proof}
+
+%TCIMACRO{\TeXButton{Transition: Blinds Vertical}{\transblindsvertical}}%
+%BeginExpansion
+\transblindsvertical%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Texto en cajas II}
+
+También se pueden usar cajas definidas por el usuario
+
+%TCIMACRO{%
+%\TeXButton{\begin{beamerboxesrounded}}{\begin{beamerboxesrounded}[shadow=true]{\tt
+%beamerboxesrounded, with option shadow=true}
+%}}%
+%BeginExpansion
+\begin{beamerboxesrounded}[shadow=true]{\tt
+beamerboxesrounded, with option shadow=true}
+%
+%EndExpansion
+
+$\int f\left( x-y\right) g\left( x+y\right) \frac{dy}{y}$
+
+%TCIMACRO{\TeXButton{\end{beamerboxesrounded}}{\end{beamerboxesrounded}}}%
+%BeginExpansion
+\end{beamerboxesrounded}%
+%EndExpansion
+
+%TCIMACRO{%
+%\TeXButton{\begin{alertblock}}{\begin{alertblock}<+-> { A Key Point }
+%}}%
+%BeginExpansion
+\begin{alertblock}<+-> { A Key Point }
+%
+%EndExpansion
+
+Use \textsc{alertblock} for those key points and examples.
+
+%TCIMACRO{\TeXButton{\end{alertblock}}{\end{alertblock}}}%
+%BeginExpansion
+\end{alertblock}%
+%EndExpansion
+
+En forma de \textsc{postit}
+
+%TCIMACRO{%
+%\TeXButton{\setbeamercolor{postit}{fg=black,bg=yellow}}{\setbeamercolor{postit}{fg=black,bg=yellow}
+%}}%
+%BeginExpansion
+\setbeamercolor{postit}{fg=black,bg=yellow}
+%
+%EndExpansion
+
+%TCIMACRO{%
+%\TeXButton{\begin{beamercolorbox}[sep=2em,wd=6cm] {postit} }{\begin{center}
+%\begin{beamercolorbox}[sep=2em,wd=6cm] {postit}
+%}}%
+%BeginExpansion
+\begin{center}
+\begin{beamercolorbox}[sep=2em,wd=6cm] {postit}
+%
+%EndExpansion
+
+Algún texto importante para resaltar en en postit
+
+%TCIMACRO{%
+%\TeXButton{\end{beamercolorbox}}{\end{beamercolorbox}
+%\end{center}}}%
+%BeginExpansion
+\end{beamercolorbox}
+\end{center}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{Transition: Blinds Vertical}{\transblindsvertical}}%
+%BeginExpansion
+\transblindsvertical%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Usando items}
+
+\QTR{framesubtitle}{paso a paso y ecuaciones}
+
+%TCIMACRO{\TeXButton{BeginColumns}{\begin{columns}}}%
+%BeginExpansion
+\begin{columns}%
+%EndExpansion
+%TCIMACRO{\TeXButton{Column}{\column{10.5cm}}}%
+%BeginExpansion
+\column{10.5cm}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{\begin{block}}{\begin{block}{\sc{Items pausados}}}}%
+%BeginExpansion
+\begin{block}{\sc{Items pausados}}%
+%EndExpansion
+
+\begin{stepenumerate}
+\item Este es el primer item
+
+\item Este es el segundo item
+
+\item Este es el tercer item\pause
+\end{stepenumerate}
+
+\emph{Ahora introduciremos una ecuación}%
+\begin{equation}
+x=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}
+\end{equation}
+
+%TCIMACRO{\TeXButton{\end{block}}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndColumns}{\end{columns}}}%
+%BeginExpansion
+\end{columns}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{Transition: Box In}{\transboxin}}%
+%BeginExpansion
+\transboxin%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\subsection{Choosing presentation themes}
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Choosing presentation themes}
+
+\begin{stepitemize}
+\item Beamer 'presentation themes' define the details of a presentation's
+appearance.
+
+\item Types of themes:
+
+\begin{itemize}
+\item Without navigation bars
+
+\item With tree-like navigation bars
+
+\item With a table of contents sidebar
+
+\item With a mini-frame navigation
+
+\item With section and subsection tables
+\end{itemize}
+
+\item This presentation uses the Madrid theme, which has no navigation bars.
+
+\item See a list of other themes in SWSamples/PackageSample-beamer.tex.
+
+\item To use a theme, add the command \texttt{\TEXTsymbol{\backslash}%
+usetheme\{themename\}} to the preamble of your document, replacing any
+existing \texttt{\TEXTsymbol{\backslash}usetheme} command.
+\end{stepitemize}
+
+%TCIMACRO{\TeXButton{Transition: Glitter}{\transglitter}}%
+%BeginExpansion
+\transglitter%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\subsection{Creating frames}
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Creating frames}
+
+A Beamer 'frame' corresponds to a presentation slide.
+
+\begin{stepitemize}
+\item In \textsl{SWP }or \textsl{SW}, apply the Frame title and Frame
+subtitle text tags to mark the titles.
+
+\item Apply the BeginFrame fragment to start a frame.
+
+\item Apply the EndFrame fragment to end the frame.
+
+\item Apply the Frame fragment to make both a beginning and an end.
+\end{stepitemize}
+
+%TCIMACRO{%
+%\TeXButton{Transition: Split Horizontal In}{\transsplithorizontalin
+%}}%
+%BeginExpansion
+\transsplithorizontalin
+%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\subsection{Working with lists}
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Working with lists}
+
+\begin{itemize}
+\item Use lists to organize information on slides.
+
+\item Types of lists:
+
+\begin{itemize}
+\item Standard numbered and bulleted lists
+
+\item Step lists
+
+\item Alert step lists
+\end{itemize}
+\end{itemize}
+
+%TCIMACRO{%
+%\TeXButton{Transition: Split Horizontal Out}{\transsplithorizontalout
+%}}%
+%BeginExpansion
+\transsplithorizontalout
+%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Working with lists}
+
+\QTR{framesubtitle}{Step lists}
+
+\begin{stepitemize}
+\item Step lists enhance presentations by displaying the list items one at a
+time.
+
+\item Enter numbered step lists with the Step Numbered List Item tag.
+
+\item Enter bulleted step lists with the Step Bullet List Item tag.
+\end{stepitemize}
+
+%TCIMACRO{\TeXButton{Transition: Split Vertical In}{\transsplitverticalin}}%
+%BeginExpansion
+\transsplitverticalin%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Working with lists}
+
+\QTR{framesubtitle}{Alert step lists}
+
+\begin{stepitemizewithalert}
+\item Alert step lists enhance presentations by highlighting the most
+recently displayed item in a step list.
+
+\item Enter numbered alert lists with the Alert Step Numbered List Item tag.
+
+\item Enter bulleted alert lists with the Alert Step Bullet List Item tag.
+\end{stepitemizewithalert}
+
+%TCIMACRO{%
+%\TeXButton{Transition: Split Vertical Out}{\transsplitverticalout}}%
+%BeginExpansion
+\transsplitverticalout%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\subsection{Adding transitions}
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Adding transitions}
+
+\begin{stepitemize}
+\item Beamer enhances presentations with dynamic transitions between frames.
+
+\item Types of transitions:
+
+\begin{stepitemize}
+\item Horizontal and vertical blinds
+
+\item Box in and box out
+
+\item Dissolve, glitter, and wipe
+
+\item Split horizontal in and out
+
+\item Split vertical in and out
+\end{stepitemize}
+
+\item Apply fragments to create dynamic transitions.
+
+\item Each fragment controls the transition from the frame that precedes it
+to the frame that contains it.
+
+\item This presentation uses the Box Out transition.
+\end{stepitemize}
+
+%TCIMACRO{\TeXButton{Transition: Wipe}{\transwipe}}%
+%BeginExpansion
+\transwipe%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\subsection{Using columns}
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Using columns}
+
+Beamer supports multiple columns of text.
+
+%TCIMACRO{\TeXButton{BeginColumns}{\begin{columns}[5cm]}}%
+%BeginExpansion
+\begin{columns}[5cm]%
+%EndExpansion
+%TCIMACRO{\TeXButton{Column}{\column{5cm}}}%
+%BeginExpansion
+\column{5cm}%
+%EndExpansion
+
+\begin{stepitemizewithalert}
+\item To begin columns, apply the BeginColumns fragment.
+
+\item Revise the fragment to set the column width.
+
+\item The default fragment uses a column width of 5 cm.
+\end{stepitemizewithalert}
+
+%TCIMACRO{\TeXButton{Column}{\column{5cm}}}%
+%BeginExpansion
+\column{5cm}%
+%EndExpansion
+
+\begin{stepitemizewithalert}
+\item To begin later columns, apply and revise the Column fragment.
+
+\item Columns can contain inline graphics or even movies.
+
+\item To end the last column, apply the EndColumns fragment.
+\end{stepitemizewithalert}
+
+%TCIMACRO{\TeXButton{EndColumns}{\end{columns}}}%
+%BeginExpansion
+\end{columns}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\subsection{Working with color}
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Working with color}
+
+\begin{itemize}
+\item Beamer 'color themes' define the use of color in a presentation.
+
+\item This presentation uses the default color theme.
+
+\item To use a different color theme, add the command \texttt{\TEXTsymbol{%
+\backslash}usecolortheme\{colorthemename\}} to the preamble of your
+document, replacing any existing \texttt{\TEXTsymbol{\backslash}usecolortheme%
+} command.
+\end{itemize}
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\subsection{Working with fonts}
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Working with fonts}
+
+\begin{itemize}
+\item Beamer 'font themes' define the use of fonts in a presentation.
+
+\item This presentation uses the default font scheme.
+
+\item To use a different font theme, add the command \texttt{\TEXTsymbol{%
+\backslash}usefonttheme\{fontthemename\}} to the preamble of your document,
+replacing any existing \texttt{\TEXTsymbol{\backslash}usefonttheme} command.
+\end{itemize}
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\subsection{Adding graphics and animations}
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Adding graphics}
+
+\begin{itemize}
+\item Frames can contain graphics and animations.
+
+\item Columns provide support for laying out graphics and text.
+
+\item See examples in SWSamples/PackageSample-beamer.tex in your program
+installation.
+\end{itemize}
+
+%TCIMACRO{%
+%\TeXButton{Transition: Blinds Horizontal}{\transblindshorizontal}}%
+%BeginExpansion
+\transblindshorizontal%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\subsection{Setting class options}
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Setting class options}
+
+Use class options to
+
+\begin{itemize}
+\item Set the base font size for the presentation.
+
+\item Set text alignment.
+
+\item Set equation numbering.
+
+\item Set print quality.
+
+\item Format displayed equations.
+
+\item Create a presentation, handout, or set of transparencies.
+
+\item Hide or display notes.
+\end{itemize}
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Setting class options}
+
+\QTR{framesubtitle}{Notes}
+
+\note{Here is a Beamer note.}
+
+\begin{itemize}
+\item This shell is originally supplied with the notes class option set to
+Show.
+
+\item This frame contains a note so that you can test the notes options.
+
+\item To see the note, scroll to the next frame.
+\end{itemize}
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\subsection{Learn more about Beamer}
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Learn more about Beamer}
+
+\begin{itemize}
+\item This shell and the associated fragments provide basic support for
+Beamer in \textsl{SWP }and \textsl{SW}.
+
+\item The current support is a beta version.
+
+\item To learn more about Beamer, see SWSamples/PackageSample-beamer.tex in
+your program installation.
+
+\item For complete information, read the BeamerUserGuide.pdf manual provided
+with this shell.
+
+\item For support, contact \textbf{support@mackichan.com}.
+\end{itemize}
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout%
+%EndExpansion
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{References}}}%
+%BeginExpansion
+\begin{frame}{References}%
+%EndExpansion
+
+\begin{thebibliography}{9}
+\bibitem{1} Libro 1
+
+\bibitem{2} Libro 2
+\end{thebibliography}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\end{document}

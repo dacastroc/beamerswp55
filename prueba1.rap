@@ -1,0 +1,1316 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                     %
+%              Scientific Word   Wrap/Unwrap  Version 2.5             %
+%              Scientific Word   Wrap/Unwrap  Version 3.0             %
+%                                                                     %
+% If you are separating the files in this message by hand, you will   %
+% need to identify the file type and place it in the appropriate      %
+% directory.  The possible types are: Document, DocAssoc, Other,      %
+% Macro, Style, Graphic, PastedPict, and PlotPict. Extract files      %
+% tagged as Document, DocAssoc, or Other into your TeX source file    %
+% directory.  Macro files go into your TeX macros directory. Style    %
+% files are used by Scientific Word and do not need to be extracted.  %
+% Graphic, PastedPict, and PlotPict files should be placed in a       %
+% graphics directory.                                                 %
+%                                                                     %
+% Graphic files need to be converted from the text format (this is    %
+% done for e-mail compatability) to the original 8-bit binary format. %
+%                                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                     %
+% Files included:                                                     %
+%                                                                     %
+% "/document/prueba1.tex", Document, 23253, 4/11/2006, 12:56:23, ""   %
+% "/document/einstein.jpg", ImportPict, 16380, 4/18/2005, 2:55:31, "" %
+%                                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%% Start /document/prueba1.tex %%%%%%%%%%%%%%%%%%%%%
+
+%\usecolortheme{albatross}
+
+\documentclass[compress,beamer]{beamer}%
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[latin1]{inputenc}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}%
+\setcounter{MaxMatrixCols}{30}
+%TCIDATA{OutputFilter=latex2.dll}
+%TCIDATA{Version=5.50.0.2890}
+%TCIDATA{CSTFile=beamer.cst}
+%TCIDATA{Created=Monday, April 10, 2006 07:28:41}
+%TCIDATA{LastRevised=Tuesday, April 11, 2006 07:56:23}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Other Documents\SW\Slides - Beamer">}
+%BeginMSIPreambleData
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+%EndMSIPreambleData
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+\usetheme{Warsaw}
+%\usecolortheme{crane}
+\useinnertheme{rounded}
+\useoutertheme{shadow}
+\usefonttheme{professionalfonts}
+\beamertemplateshadingbackground{blue!50}{black!30}
+\begin{document}
+
+\title{Creating Beamer presentations in \textsl{Scientific WorkPlace\/}{} and
+\textsl{Scientific Word}{}}
+\author{MacKichan Software Technical Support}
+\date{March 2006}
+\maketitle%
+
+%TCIMACRO{\TeXButton{pgf}{\pgfdeclaremask{unorte}{beamer-unorte-logo-mask}
+%\pgfdeclaremask{unal}{borde_escudo_un-mask}
+%\pgfdeclaremask{obs}{beamer-obs-logo-mask}
+%\pgfdeclaremask{rel}{beamer-rel-logo-mask}
+%\pgfdeclaremask{ein}{beamer-ein-logo-mask}
+%\pgfdeclareimage[mask=rel,width=0.6cm]{i-relativity}{i-relativity}
+%\pgfdeclareimage[mask=ein,width=1.3cm]{einstein}{einstein}
+%\pgfdeclareimage[mask=unorte,width=0.6cm]{unorte-logo}{beamer-unorte-logo}
+%\pgfdeclareimage[mask=obs,width=1.6cm]{obs-logo}{beamer-obs-logo}
+%%\pgfdeclareimage[mask=ur,width=5cm]{titlefacfondo}{titlefacfondo}
+
+%\titlegraphic{\pgfuseimage{titlefacfondo}}
+
+\pgfdeclareimage[mask=unal,width=2.2cm]{borde_escudo_un}{borde_escudo_un}
+%%\titlegraphic{\pgfuseimage{borde_escudo_un}}
+
+\titlegraphic{\hbox{\hbox to 2.5cm{\hfil\pgfuseimage{obs-logo}}\hskip
+%5.5cm\hbox{\pgfuseimage{borde_escudo_un}}}\vskip-1.19cm\hbox{\hbox
+%to 6cm{\hfil\pgfuseimage{einstein}}}}
+%%\titlegraphic{\hbox{\hbox to 2.5cm{\hfil\pgfuseimage{obs-logo}}\hskip5.5cm\hbox{\pgfuseimage{borde_escudo_un}}}}
+
+%\logo{\vbox{\hbox to 1cm{\hfil\pgfuseimage{unorte-logo}}\vskip0.1cm\hbox{\pgfuseimage{obs-logo}}}}
+%}}%
+%BeginExpansion
+\pgfdeclaremask{unorte}{beamer-unorte-logo-mask}
+\pgfdeclaremask{unal}{borde_escudo_un-mask}
+\pgfdeclaremask{obs}{beamer-obs-logo-mask}
+\pgfdeclaremask{rel}{beamer-rel-logo-mask}
+\pgfdeclaremask{ein}{beamer-ein-logo-mask}
+\pgfdeclareimage[mask=rel,width=0.6cm]{i-relativity}{i-relativity}
+\pgfdeclareimage[mask=ein,width=1.3cm]{einstein}{einstein}
+\pgfdeclareimage[mask=unorte,width=0.6cm]{unorte-logo}{beamer-unorte-logo}
+\pgfdeclareimage[mask=obs,width=1.6cm]{obs-logo}{beamer-obs-logo}
+%\pgfdeclareimage[mask=ur,width=5cm]{titlefacfondo}{titlefacfondo}
+
+\titlegraphic{\pgfuseimage{titlefacfondo}}
+
+pgfdeclareimage[mask=unal,width=2.2cm]{borde_escudo_un}{borde_escudo_un}
+%\titlegraphic{\pgfuseimage{borde_escudo_un}}
+
+titlegraphic{\hbox{\hbox to 2.5cm{\hfil\pgfuseimage{obs-logo}}\hskip
+5.5cm\hbox{\pgfuseimage{borde_escudo_un}}}\vskip-1.19cm\hbox{\hbox
+to 6cm{\hfil\pgfuseimage{einstein}}}}
+%\titlegraphic{\hbox{\hbox to 2.5cm{\hfil\pgfuseimage{obs-logo}}\hskip5.5cm\hbox{\pgfuseimage{borde_escudo_un}}}}
+
+\logo{\vbox{\hbox to 1cm{\hfil\pgfuseimage{unorte-logo}}\vskip0.1cm\hbox{\pgfuseimage{obs-logo}}}}
+%EndExpansion
+
+
+\section{Creating Beamer presentations in Scientific WorkPlace and Scientific
+Word}
+
+\subsection{What is Beamer?}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{Título}{\frametitle{Título}}}%
+%BeginExpansion
+\frametitle{Título}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{Subtítulo}{\framesubtitle{Subtítulo}}}%
+%BeginExpansion
+\framesubtitle{Subtítulo}%
+%EndExpansion
+
+
+\begin{itemize}
+\item Beamer is a
+%TCIMACRO{\TeXButton{LaTeX}{\LaTeX{}} }%
+%BeginExpansion
+\LaTeX{}
+%EndExpansion
+package that produces beautiful \textsc{pdf}%
+%TCIMACRO{\TeXButton{LaTeX}{\LaTeX{}} }%
+%BeginExpansion
+\LaTeX{}
+%EndExpansion
+presentations and transparency slides.\pause
+
+
+\item Beamer presentations feature\pause
+
+
+\begin{itemize}
+\item \textsc{pdf}%
+%TCIMACRO{\TeXButton{LaTeX}{\LaTeX{}} }%
+%BeginExpansion
+\LaTeX{}
+%EndExpansion
+output.\pause
+
+
+\item Global and local control of layout, color, and fonts.
+\href{einstein.jpg}{adad}\href{run: C:/pruebabeamerswp55/einstein.jpg}{logo}\pause
+
+\item List items that can appear one at a time.\pause
+
+
+\item Overlays and dynamic transitions between slides.\pause
+
+
+\item Standard
+%TCIMACRO{\TeXButton{LaTeX}{\LaTeX{}} }%
+%BeginExpansion
+\LaTeX{}
+%EndExpansion
+constructs.\pause
+
+
+\item Typeset text, mathematics $\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}$, and
+graphics.\pause
+
+\end{itemize}
+\end{itemize}
+
+\begin{example}
+fgdfg\pause
+
+\end{example}
+
+\begin{definition}
+ghfg
+\end{definition}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{Un bloque}{Usando columnas}}}%
+%BeginExpansion
+\begin{frame}{Un bloque}{Usando columnas}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{BeginColumns}{\begin{columns}}}%
+%BeginExpansion
+\begin{columns}%
+%EndExpansion%
+%TCIMACRO{\TeXButton{Column}{\column{10.5cm}}}%
+%BeginExpansion
+\column{10.5cm}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{%
+%\begin{block}%
+%}{\begin{block}{Abstract}}}%
+%BeginExpansion
+\begin{block}{Abstract}%
+%EndExpansion
+
+
+General relativity is a highly complicated field theory both classically and
+quantum mechanically. Even though a large number of classical solutions
+exists, a general classification of the space of solutions has never been
+achieved. These lectures briefly review our current understanding of classical
+and quantum gravity in three spacetime dimension, general relativity in two
+spatial dimensions plus time. In three spacetime dimensions, general
+relativity drastically simplifies, with no propagating local degrees of
+freedom. Nevertheless, many of the difficult conceptual problems of quantizing
+gravity are still present. In this review, I summarize the rather large body
+of work that has gone towards quantizing (2+1)-dimensional vacuum gravity.%
+
+%TCIMACRO{\TeXButton{%
+%\end{block}%
+%}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{EndColumns}{\end{columns}}}%
+%BeginExpansion
+\end{columns}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{Transition: Blinds Vertical}{\transblindsvertical}}%
+%BeginExpansion
+\transblindsvertical
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{Usando items}{paso a paso}}}%
+%BeginExpansion
+\begin{frame}{Usando items}{paso a paso}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{BeginColumns}{\begin{columns}}}%
+%BeginExpansion
+\begin{columns}%
+%EndExpansion%
+%TCIMACRO{\TeXButton{Column}{\column{10.5cm}}}%
+%BeginExpansion
+\column{10.5cm}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{%
+%\begin{block}%
+%}{\begin{block}{\sc{Items pausados}}}}%
+%BeginExpansion
+\begin{block}{\sc{Items pausados}}%
+%EndExpansion
+
+
+\begin{stepenumerate}
+\item Este es el primer item
+
+\item Este es el segundo item
+
+\item Este es el tercer item\pause
+
+\end{stepenumerate}
+
+\emph{Ahora introduciremos una ecuación}%
+\begin{equation}
+x=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}%
+\end{equation}
+%
+
+%TCIMACRO{\TeXButton{%
+%\end{block}%
+%}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+
+En la figura (\ref{ein1})%
+
+%TCIMACRO{\FRAME{ftbphFU}{0.4955in}{0.4359in}{0pt}{\Qcb{\QTR{em}{Eisntein
+%2005.}}}{\Qlb{ein1}}{einstein.jpg}{\special{ language "Scientific Word";
+%type "GRAPHIC";  maintain-aspect-ratio TRUE;  display "USEDEF";
+%valid_file "F";  width 0.4955in;  height 0.4359in;  depth 0pt;
+%original-width 3.7498in;  original-height 3.2915in;  cropleft "0";
+%croptop "1";  cropright "1";  cropbottom "0";
+%filename 'einstein.jpg';file-properties "XNPEU";}}}%
+%BeginExpansion
+\begin{figure}
+[ptbh]
+\begin{center}
+\includegraphics[
+natheight=3.291500in,
+natwidth=3.749800in,
+height=0.4359in,
+width=0.4955in
+]%
+{einstein.jpg}%
+\caption{\emph{Eisntein 2005.}}%
+\label{ein1}%
+\end{center}
+\end{figure}
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{EndColumns}{\end{columns}}}%
+%BeginExpansion
+\end{columns}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{Transition: Box In}{\transboxin}}%
+%BeginExpansion
+\transboxin
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\subsection{Using Beamer with Scientific WorkPlace and Scientific Word}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Using Beamer with Scientific WorkPlace and
+%Scientific Word}}%
+%BeginExpansion
+Using Beamer with Scientific WorkPlace and Scientific Word%
+%EndExpansion
+
+
+\begin{enumerate}
+\item Choose the TrueTeX pdfTeX formatter:
+
+Choose \textbf{Typeset+Expert Settings}, select the \textbf{PDF Format
+Settings} tab, and choose the \textbf{TrueTeX pdfTeX} formatter.
+
+\item Typeset the completed presentation as a PDF\ file:
+
+Choose \textbf{Typeset+Preview PDF} or \textbf{Typeset+Print PDF}.
+
+\item Display the presentation with Acrobat Reader.
+\end{enumerate}
+
+To produce a sample presentation, typeset this shell document with
+\textsc{pdf}%
+%TCIMACRO{\TeXButton{LaTeX}{\LaTeX{}} }%
+%BeginExpansion
+\LaTeX{}
+%EndExpansion
+.%
+
+%TCIMACRO{\TeXButton{Transition: Dissolve}{\transdissolve}}%
+%BeginExpansion
+\transdissolve
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\subsection{Choosing presentation themes}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Choosing presentation themes}}%
+%BeginExpansion
+Choosing presentation themes%
+%EndExpansion
+
+
+\begin{stepitemize}
+\item Beamer 'presentation themes' define the details of a presentation's appearance.
+
+\item Types of themes:
+
+\begin{itemize}
+\item Without navigation bars
+
+\item With tree-like navigation bars
+
+\item With a table of contents sidebar
+
+\item With a mini-frame navigation
+
+\item With section and subsection tables
+\end{itemize}
+
+\item This presentation uses the Madrid theme, which has no navigation bars.
+
+\item See a list of other themes in SWSamples/PackageSample-beamer.tex.
+
+\item To use a theme, add the command \texttt{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+usetheme\{themename\}} to the preamble of your document, replacing any
+existing \texttt{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+usetheme} command.
+\end{stepitemize}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Glitter}{\transglitter}}%
+%BeginExpansion
+\transglitter
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\subsection{Creating frames}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Creating frames}}%
+%BeginExpansion
+Creating frames%
+%EndExpansion
+
+
+A Beamer 'frame' corresponds to a presentation slide.
+
+\begin{stepitemize}
+\item In \textsl{SWP }or \textsl{SW}, apply the Frame title and Frame subtitle
+text tags to mark the titles.
+
+\item Apply the BeginFrame fragment to start a frame.
+
+\item Apply the EndFrame fragment to end the frame.
+
+\item Apply the Frame fragment to make both a beginning and an end.
+\end{stepitemize}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Split Horizontal In}{\transsplithorizontalin
+%}}%
+%BeginExpansion
+\transsplithorizontalin
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\subsection{Working with lists}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Working with lists}}%
+%BeginExpansion
+Working with lists%
+%EndExpansion
+
+
+\begin{itemize}
+\item Use lists to organize information on slides.
+
+\item Types of lists:
+
+\begin{itemize}
+\item Standard numbered and bulleted lists
+
+\item Step lists
+
+\item Alert step lists
+\end{itemize}
+\end{itemize}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Split Horizontal Out}{\transsplithorizontalout
+%}}%
+%BeginExpansion
+\transsplithorizontalout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Working with lists}}%
+%BeginExpansion
+Working with lists%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{framesubtitle}{Step lists}}%
+%BeginExpansion
+Step lists%
+%EndExpansion
+
+
+\begin{stepitemize}
+\item Step lists enhance presentations by displaying the list items one at a time.
+
+\item Enter numbered step lists with the Step Numbered List Item tag.
+
+\item Enter bulleted step lists with the Step Bullet List Item tag.
+\end{stepitemize}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Split Vertical In}{\transsplitverticalin}}%
+%BeginExpansion
+\transsplitverticalin
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Working with lists}}%
+%BeginExpansion
+Working with lists%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{framesubtitle}{Alert step lists}}%
+%BeginExpansion
+Alert step lists%
+%EndExpansion
+
+
+\begin{stepitemizewithalert}
+\item Alert step lists enhance presentations by highlighting the most recently
+displayed item in a step list.
+
+\item Enter numbered alert lists with the Alert Step Numbered List Item tag.
+
+\item Enter bulleted alert lists with the Alert Step Bullet List Item tag.
+\end{stepitemizewithalert}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Split Vertical Out}{\transsplitverticalout}}%
+%BeginExpansion
+\transsplitverticalout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\subsection{Adding transitions}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Adding transitions}}%
+%BeginExpansion
+Adding transitions%
+%EndExpansion
+
+
+\begin{stepitemize}
+\item Beamer enhances presentations with dynamic transitions between frames.
+
+\item Types of transitions:
+
+\begin{stepitemize}
+\item Horizontal and vertical blinds
+
+\item Box in and box out
+
+\item Dissolve, glitter, and wipe
+
+\item Split horizontal in and out
+
+\item Split vertical in and out
+\end{stepitemize}
+
+\item Apply fragments to create dynamic transitions.
+
+\item Each fragment controls the transition from the frame that precedes it to
+the frame that contains it.
+
+\item This presentation uses the Box Out transition.
+\end{stepitemize}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Wipe}{\transwipe}}%
+%BeginExpansion
+\transwipe
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\subsection{Using columns}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Using columns}}%
+%BeginExpansion
+Using columns%
+%EndExpansion
+
+
+Beamer supports multiple columns of text.%
+
+%TCIMACRO{\TeXButton{BeginColumns}{\begin{columns}[5cm]}}%
+%BeginExpansion
+\begin{columns}[5cm]%
+%EndExpansion%
+%TCIMACRO{\TeXButton{Column}{\column{5cm}}}%
+%BeginExpansion
+\column{5cm}%
+%EndExpansion
+
+
+\begin{stepitemizewithalert}
+\item To begin columns, apply the BeginColumns fragment.
+
+\item Revise the fragment to set the column width.
+
+\item The default fragment uses a column width of 5 cm.
+\end{stepitemizewithalert}
+
+%
+
+%TCIMACRO{\TeXButton{Column}{\column{5cm}}}%
+%BeginExpansion
+\column{5cm}%
+%EndExpansion
+
+
+\begin{stepitemizewithalert}
+\item To begin later columns, apply and revise the Column fragment.
+
+\item Columns can contain inline graphics or even movies.
+
+\item To end the last column, apply the EndColumns fragment.
+\end{stepitemizewithalert}
+
+%
+
+%TCIMACRO{\TeXButton{EndColumns}{\end{columns}}}%
+%BeginExpansion
+\end{columns}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\subsection{Working with color}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Working with color}}%
+%BeginExpansion
+Working with color%
+%EndExpansion
+
+
+\begin{itemize}
+\item Beamer 'color themes' define the use of color in a presentation.
+
+\item This presentation uses the default color theme.
+
+\item To use a different color theme, add the command \texttt{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+usecolortheme\{colorthemename\}} to the preamble of your document, replacing
+any existing \texttt{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+usecolortheme} command.
+\end{itemize}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\subsection{Working with fonts}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Working with fonts}}%
+%BeginExpansion
+Working with fonts%
+%EndExpansion
+
+
+\begin{itemize}
+\item Beamer 'font themes' define the use of fonts in a presentation.
+
+\item This presentation uses the default font scheme.
+
+\item To use a different font theme, add the command \texttt{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+usefonttheme\{fontthemename\}} to the preamble of your document, replacing any
+existing \texttt{%
+%TCIMACRO{\TEXTsymbol{\backslash}}%
+%BeginExpansion
+$\backslash$%
+%EndExpansion
+usefonttheme} command.
+\end{itemize}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\subsection{Adding graphics and animations}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Adding graphics}}%
+%BeginExpansion
+Adding graphics%
+%EndExpansion
+
+
+\begin{itemize}
+\item Frames can contain graphics and animations.
+
+\item Columns provide support for laying out graphics and text.
+
+\item See examples in SWSamples/PackageSample-beamer.tex in your program installation.
+\end{itemize}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Blinds Horizontal}{\transblindshorizontal}}%
+%BeginExpansion
+\transblindshorizontal
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\subsection{Setting class options}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Setting class options}}%
+%BeginExpansion
+Setting class options%
+%EndExpansion
+
+
+Use class options to
+
+\begin{itemize}
+\item Set the base font size for the presentation.
+
+\item Set text alignment.
+
+\item Set equation numbering.
+
+\item Set print quality.
+
+\item Format displayed equations.
+
+\item Create a presentation, handout, or set of transparencies.
+
+\item Hide or display notes.
+\end{itemize}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Setting class options}}%
+%BeginExpansion
+Setting class options%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{framesubtitle}{Notes}}%
+%BeginExpansion
+Notes%
+%EndExpansion
+
+
+\note{Here is a Beamer note.}
+
+\begin{itemize}
+\item This shell is originally supplied with the notes class option set to Show.
+
+\item This frame contains a note so that you can test the notes options.
+
+\item To see the note, scroll to the next frame.
+\end{itemize}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+\subsection{Learn more about Beamer}%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\QTR{frametitle}{Learn more about Beamer}}%
+%BeginExpansion
+Learn more about Beamer%
+%EndExpansion
+
+
+\begin{itemize}
+\item This shell and the associated fragments provide basic support for Beamer
+in \textsl{SWP }and \textsl{SW}.
+
+\item The current support is a beta version.
+
+\item To learn more about Beamer, see SWSamples/PackageSample-beamer.tex in
+your program installation.
+
+\item For complete information, read the BeamerUserGuide.pdf manual provided
+with this shell.
+
+\item For support, contact \textbf{support@mackichan.com}.
+\end{itemize}
+
+%
+
+%TCIMACRO{\TeXButton{Transition: Box Out}{\transboxout}}%
+%BeginExpansion
+\transboxout
+%EndExpansion%
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+%
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}{References}}}%
+%BeginExpansion
+\begin{frame}{References}%
+%EndExpansion
+
+
+\begin{thebibliography}{9}                                                                                                %
+
+
+\bibitem {1}dd
+
+\bibitem {2}dsd
+\end{thebibliography}
+
+%
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%% End /document/prueba1.tex %%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%% Start /document/einstein.jpg %%%%%%%%%%%%%%%%%%%%
+
+c}`C@DJYTRFAP@AD@@HA@R@@p[CpP@Tp@DP@ACT@ADPPAET`AGp@BG\pAG|pBKd@CQ|`DRDq
+CQDqDVpqESPaFUDQDXDBFZtQG_|qGS\aHdHbGdpaG_xq[CpPATPAE\`AGx@BHx`GTDAE^xaG^x
+aG^xaG^xaG^xaG^xaG^xaG^xaG^xaG^xaG^xaG^xaG^xaG^xaG^xaG^xaG^xq@CPDH@P{Axp@A
+HB@BDQ@CDQ@SL@_@@@ATP@ADP@AD@@@@@@@@@@@D`@CPPAF\@BIhpBSL@uBA@BDp@CH@ACTPA
+DP@@@DP_AHp@@PPDEHQHqDdASDUXGHR\THS`QFJBcHTlAWaTQCOIsHf\Bf`BV\AFYhQIf\BJihB
+MuXsMxdcNCQTQF]DRIitTTUeUWaUVZMFYeYvYhefZsQW]v]G^yiw`DVhaGbXbJJydTVieWbYfZJ
+zhdVjigbZjjJ{ltVkmwb[nzJ|pDWlqGc\rJK}tTWmuWc]vZGnxcS^yf_Nzik^|rOO}u[}xgo~
+SL@_D@@CDP@ADP@ADP@A@@@@@@@@D`@CPPAF\@BIhpBSL@uFA@BD`@DPp@D\PADP@@AHp]@D`@
+CDAAEDRLFHQPQ]PXqMaHrDHBTHTdaF[pILrLRA_EbIWtJXAItD^Iq_AFYhaIg`RJjTcMw`SNzLD
+QEYtQHedRSQUUV]EVYiuXdUfYgaVZjMG]uYw]xeg^BNHaEZxaHfhbRNIeUZyeXfifbNJieZzihf
+jjrNKmuZ{mxfknBOLqE[|qHglrROMuU[}uXgmvbONye[~yhgnzrOO}u[}xgo~kM@LLP@@HPDC
+DA@@P~Fm\SRJ~xl[HOJ}]\T^^OO@Mcs}iuzsxFi{bO]sgcPr[vBtCL{{y[mwfBo}lZTHXV~
+`NwcX~Id^ro]u{jmno|SvIIF_\NUiEY{PYaxDusdDQ{_SCCaOr_oxT]KT[in}qnAT}_P}gBmiL
+OfaAfVnbFUzQ`~rf_uNkkiYkUoTAlRjnT@gWPpNjdyrSqy]jj]ScMP_tZijPQpOljKCyol|}Ov
+sAlAeHyDfmuJXJKeCoF{eE\aX~agh~c}hsiZHd{btsV^BKIeLIgSSlyNuqqMxq}zCJIS~}`fpxR
+nVdDp@PTE`QTO@cSNicgNYrfSKU|X_bDpb`s@bPxFLHdYxO[~GgTYQdXDQIalAsVaqsAMMOt}O@
+}thZiGGJAJzUDOIcgAmCCjn^}}PoaTy[envyUAFWDEhHoEFs[Mk[eESZRtvUiTRbdJNdCvDGg~
+UmqJemUuOwXTOEzvQgRYPnMa[cl|yyzL{}GW`L]tK^hitiXRD@go`ovM@cUcX[{DZsGXpaGHz~U
+kt[ce[Dpj[@ErSJwgjpK]fAyaWpISLEUx\QnYS_ukDaATFYxlJt@[Cnd@BqP]kL[_ttNCkFxcN
+kzrgVAynfBvnHWkfMScu^QvF@GUWTKVBmQyhjdAUngTLIctCjKb]DXlcEKeQY]GWsEY[giYlQX
+yx\NmfZRclJGNNWTkJSJSIHirGCRL|rlpbaGtwCjXGPYb_k[mHV\xraMIYoHinlDszW{[efsAlN
+PYtLEJmHnqzQurqmhbD@D`]tFOzTZd]KKcj`^qU|Vz~r\lxdUTlbDgxNuh@~XxTxSrmtTkfqfF
+i]PRt~mJ~dNcHh]Iddswp_kHttzrXY\rdkgeEJr@JeBlJIM@uwuz^CAQcpmu{PIz~IlLQMnI@|
+Yj}bX[kbmbJkrPL\MHgp[TQcaMRJRHa\ocyvrf[~@f@EtQ|TeZslSHyINZNAI_dGkempskdnUuN
+GnNTGCgPpCtPhkcFpjUPwrFaBd{qjiMMlV_HJWNbbuRBMR}JdAwS_Y\gLxQWPOOID@BF`PsoVn
+uRvci_ofDIELOweLEbtNf|tfdgz~mgVzV]QhkXAQqTPXFYGqcsQ{v_ZlFnaYPqukZbdGdSeSCL
+CeNWrC\PGjOVFxeEr_`rTOjuSMi|IRCRRoKANcWNfLhYuWSZ\hvWfL@dQ|fIFA|Y|ir[GAp|eN
+APcG]Z|io]NvZW{Q_s{{]kHqrAjmkWTNlZ^US_ra@HyawUF]zSrUwiCeV[glFtpbU]}l`H{T\
+S_JW~WasjVVRG{Tmbe\fLIKklrXbPN@DXMycjoFcTwMnU~RXNZreRpcgpEFpPm{ncqH`OYzZ\Bp
+nR|TONyTBiFVyfLGrrk_{OKuOnPKrSi_hHPqWjOOinBpRfzTEBYGgfSFcC}|uWaXVw@yA|hWNe
+RKazMiHfmm`KiNALmg}DgVV[a{`uvnTJQhNCWLTpttDPG|ZPV@Duu`R_EsFV@I^MXySm`\lg^R
+eMvsBvKIOAL]QLYVw^cH~plaTYRA_PFaBp~kQr^pzoVD~FghNNcdM^}mvgOSwLnFar~KqWvGpX|
+Sm}vdZw^IKfOhVPWgouv^yXdLL_RuApnUus^QcRURltuONEHFT`MpgSYUXsrByrNNgCxhJmkk
+oV[XQrgmoiSOxwit`whmmAY@szXo}dzdseC{W\bsBp]j^gm`TQ@q@iCEPWQ]L}J^fwI[sofgR
+cS\qOnycgOtW`sNIOq@`wyyHRlovBBcMYWtZ{nSfGy^VpX^cMxS^cRmgBVuasEuZ^biwXuxEZT
+JPNGTsnyMpHp`QF]TpYM}FmwfcF}YKX{NTIO`JN@nNucZWI^L@qimkJIPh\AHqgCW{PaaB}O@
+yTt@qMP`ZVJEKqvkhpf@IdNTHCwXp~@humg@iHDD~ffjS\kCeSjWQ\@@BJy|lR}e`zOQPaVIB
+B]dGkiuEFPC]DH@vc@mubxd@DCPpcxH~fSKoW[kXmBbDkTA[`MxcqiuTzE[RiMGhqFimU@`|{X
+]qSjcnwL`zkiYlx~`[eWvAAFhcGUsjgj|HaiKTIMN@U_\VEPkNlHAvedPOWOhbQKHwrnJMjNRU_
+lWNuDX[qIpk]Wrmz]^|mbc{JZLhQrIdFyGfEKUyfqJuvLbJmBddTP\LBJriZkVpD@BOLdJCZD
+yWuNITmihSE}GOF~U}LLng_`CD{qUDM{og[JVjivRGDGhNJQv]`G\kRwVjvARwXMIm@DrNGrES
+TEYvlBWXIFMbkQCLjY~ejAWGTvQTe|qhB\sgUCBmvpXNqtuFfNKtKVFchhUICb~OjvyfripIJ
+BKGAWp`ayxl~UuwEPDYQtQSeC]i[]gaRora}oGq@l]h]p]afTxBbiuZFqsWt|^vZB\z`OFuTB
+IPZlstQsy[UJSNXBDS~u^csGIPNCH[`EBRSsI}k^MLH[kuqScQuh`BQFm|sqyxiS_qyYHqPQZB
+lmhfubM@|m`TLpqWSb_TaMdCBHLI\PFmfChCrn]pUDAirSXLnmsCIAw`YGxJxyuOq`jjVHig@H
+JF\tiD}|JICrvYT^uxupsL}@_Vy]gjMODHANgUoXSidLRXswpVN~ogFnu\MZzXBx\\L~SjXZCT
+VWklTambiLK[_cKW~x[Dgss}~tuwJnt`]xRIMG\PFCqiE|[KBJADeRNjZoiQglx]{YuAFv@~LA
+~nbiIAvMk@p_YlJIkLnX@PCwdVQCyayftIQhqXpx\Y\lHtrwJnqbkvFPyjZPwABlWqioxlJ[p
+EHMoHyJSF[UAsMYdARoxjRLWmNwFFD`]m]@GOll~QWsj[XYp@Hc|ujvVrQNgjF[[E_DGgWJZtFS
+{FARFJDYlyx\JAnhFackvTA~d\r@UwlBm`[@IR|wSsgoUcgeCYA\GN]@|NjVom{ipg^`{@^JGu]
+N}dB|pPLxufNC{k\STvJDoPLZjmnixqFHlcyIfkceVnR~]`HqEQbtY{`zKVbQdW_k^Fkkdwl`F@
+xzhf_negwJ]R@c\E[x\Y]ClDeYJXl\]ckInaZcX\YDprpxUe\eTIjEq`{F@rcMzXUikgtHyyXV
+\V_KT[M_LSLXdEWQtV]A{WQiFNumCpx]j^[TJgU^UeQzQ}nCIWkdDQAH@HmiMI`@TPnucsrVG
+HTAxQp{XwipE_bv~W\gGkUDs|Pf]O{QErBIjyeAngqYmlnnYDE_L|dy_]r`k|Ax~FU@uUlYH{Mn
+^JUPU`iHFPhkcUEWXsjVYCyzT\{rQDksek^^~ZHeA\F`psqvsOJ`mtoAjCZ]dPHMrZqQjMRikJ
+jUkNyzxKcHdASi}tKBkYu}VH|K^Y|HFg`Kkeh{fNGWFYUAdVXuyrWC\]CfJHycUXtxBC@xCoIlm
+sq[nRR]Ntq]zaj[cYYRSLO\FJY]m|Z[gHjMhussuITv^rHDn^ONn]hc~VSx]bHwcFzhUHcLNupk
+Ye{jqvad{m]BDqTvbjdgr^V{ngjfeonqeEBDOe}HH^|[iyYfMGBMULgB\Q`XkIz|c~XtFfOC@
+PROgqsCP_Eu`fqkruvZJDoc^QGQ{\wuvMosTZIFPOAT|Y}gZU~BEEzIfl`xyIVQEe\@a]gkIg\
+sYdZp^FcGWr|onZTUQMdU|UPhZIaJ_a|VFbBkYzbdgvVoUFQxQOc{pwBSU[ygJcNZPzVW@sYB^
+OkRO}on^Js|nkHIiwBUokRlMY\FZxgUFbQr\Ln~WuDiiMKBT]d|d}O@@L|Y\W_jttHMVvuj_Nd
+blSW{{Tx[y[fAqiIiIrfsSSOqHZp\yfx{NgqzvdOVwNEQxf`lxA~OCnZt[QtEyAzbnA|~XwG`v
+|RwxyUhTll~`FovK~NViUeHKNmFJCCYDbXClvYQk^ILAWqMjcy^NXpcU|IGMRrF^erEJm|Kjv
+l^]JoXXOjJNdpB\ZgxXnhl\CSAaPdQRULguAVRkgofNf\Vng@ZIfBnt{LNhvnlA@Dv|OssmbfV
+iPuOytrtCdotFdlscpHrbpxKGDyvqgZhVZve|irjSF|qeWoibpRfFot^NVK\FHYE\iJ`phP}CxA
+uD_VS{\i|Csph^LAqYui]ZdeBFR`a]paIXwkVUKBH@URls|Y]YteKXjAWoGYBZDSYu^kuZPgk
+hv{DGpXAEgdApCg|mIqV{Npi\W@NRNfP{[`dKR~M]l|vz~wLNcu[l_UFY_{MRH^Id~AxMiwesrk
+ZeQycGASZ}lnCYHDHAJa]ns]KF|POk[~\gqHHFvmJcSVrNY^UhYeHvya^@ln~cmleCgbsxFh[O
+jhxEU]{uaSkaJIRX`TjqaAYoqTjjor@Vegkneabfdqb`cBFgtjMUUikSeKZTwjg|hVcngLkRf
+p[Dxui_UyMbXNO^BZC\Rhj^CtJQFIE`~A_ifeASa[gkPERRPNLAn}dnda{gr\\@v{@DuJnunYi
+EICrBBfbOOCRacJFiFP@Guw^U[XsIbRrm{ZRUOerEwAP`VYQBGPyFCS\POGUaW[gfth_UYp{
+S]yubkKJibmNDwgzusvEzxdO}KXQHYWKBrphvAP}lRUoPp}jPfbe@Be^D}nZFRozTfL|FGqUPd
+^ZCp\CLc^\D[N^`uVz|RHWvF|\LNHLSvwZjUkTz`Ry[muTlhVKi~jEehLgpzw_LZYyepwtDYNA
+CCBGXv|h_MLEdIWG@WIxJ}mJrTM\LgdjOFNU`F[gf\tTUfSw{BYQ_qbhnZ{De_vWdjVcexMrQW
+rqLcE@ztwZ}uu`[IN@bXJaM{NFy`wCJokGhtLXm|IXzZc{BvHvkL]mDsyVFK|}KnNtsCZaiuR
+ZyhtQti^]PreqBgxNpcDwqU\rvgKdPhBB]GgcGub\gTmBoq\hvXqp]Hk_]ivbkCW^WJKC}g_[i
+\E[Zm\g|p@GT]siG]fRdDKHJUKHG_J[iUztVhYPZCvpCWN\\UMbbRXtzz\AjuYMfNZkkjA[^
+GyJFRAlW]tY^gGvvhOyVGUFGBUmOPsQlvqcL`CV@[sy|^VOui}]X{B`PDMuK`}]J|osUAD~~x~
+~Iatji@JgEF}sHpf~c]J[WGeGInwilNuQAT{^DN_UXMfsYLB\|TWpjRToNMXsh]oaA`i~cefu
+Ey\|YuPP`b|qzLtvUIsvoJekKW\Yrp\pkcGEwTnTxBzf@WA^o`n^g_xhJIejAonFEfhn@cgQrG
+mnUmUa~RPhjQsQm~T_irQBsmtVXu{NKCt{nZl[ouVZiuRneWYVjfrLmqcm]yvLnq{E`@yfbEGI
+@[dKNN_dRsNA[@{PBc`cys~]KaHfLYgjhNx|FxLBttAjQmWHnvUN`HgNgVqKDafhRUBBXemyG}k
+VrSSv`eOOSjDwqXfgkFfMhP^s{TBINJCAi{C_O{CmH[RBXa_~mX`CAJcCk}kev]giv^[^FFewNG
+n^st]Y\Ygw@w[mw`m_ppeGk{n]Sm\IaLJYnDL@ggWOhhI^MQlohKBsvWGplMOwuJFDIcuc\z\uX
+jRR\s`qmLxrwzjG]EKwmQWxIwggGxbJYJYeYthxf\`\^DDv\LjYq{jLlO{EwVWMxClCVOZFkKYM
+F@pxYNV{NrXSd_jwGypMLGqaumIMdmGX}fWKY`ilrWUcWD]e]]qi}mzJmfE][cZB_dhZgfZ@{F
+BfRNz]VW{KBLBfZrf]tgZn~JBvFSbR\cLDQR~_`ssca^_jzFmjxlqMHoHZKDpvN~ncLmgiXkB|
+dI`C@RJY|~s}juohywsSla_p\|{{MMXXUjDb]@PJcUy}bBcb^kIRmTjkNfEWjZc^mOTT[erawBq
+vg\y`}dMekL@|F``k]bThQD`cbDIfqBp}CmCq|huQZMAUAWG~AfA[|YkIeWAsbiwc]cJ@\ntWV[
+RhgcuM^XZWDAiLKiPnXtLeOKD[pQdQb\ipj[v`TrgkqqM^U`FuQjQ~GsZ\H_LE`DBO]`bT_HQR
+vp[mDFd@XVvDQ{Ngr^kmCdjoZIb}rm_UJoqKXQiHLCpYq~SkOYjSmcwX{sVbTCZwE~\hfSK}M
+Ja}kXxYRvmdUMrCjLpop_BM]aoWvq[RVKotPLN\LP~YSb|xTOe}IoRnKhyUrZdedjibhA]WIJNf
+AVnoSKxJ]ZbzvhBvlq@xLDVGsTelmqSSBumKlrCYfecRgcsqdElhI[kOo|_Vp^bwzqVOyjFxn
+plZjdpnuwOVy^Q\lyGKLHkrLQB]dIYchgeiyYJrYsuKl{|Yi^aDIqHSmlDHpaJCdTnSsaO}`f
+URIhrmPd\Fegufn}GCQ}AY_S\\MS}ZkqigERAS@_H]_tnBmSsvx|yZKiArq@yASqeYYRRfGyGfc
+_@`kLKtnZGlRqxrQBlWyAJ}Y[]ZzSvmpegUlEI|wQVY[O}ApZ_kHxbk`Z[coXJn[flGZyvbEPe]
+kxrJn{hG}FHV]UDIO}`@~wsmRWJoIBV[|jMGtew^euuah{y]DgbdzdiVuID|JrS_kClh_A@Uh
+ZIJZlMRl]esIcRxtxIqVPJNtFncNFghikhr}tMOBa~hOGbqIp[ZRd|Sozfo}ak{|McUgmT}VEP
+Y@rCpLSfnStbhvDi~X[OB\AqcbFR^LdiBrpyDBicOtE@waRbDGsnVV@{dhXUUZ_TF|hpklmyeg
+dqHOzvZRacq`[SxAb~CZA`eJcCxMYZj|Tw\}ykULMV\gB]WRV{VpmEkXl_FNK{d_KbfhUM@pwv
+HNP|MoVIfsiXH\mmGoRr^KdfGhCxjiIYdXfJxy_vEtIeFuoURIGzXxAYLrIiKezsr`HBk|~TBq
+OnVDT}NEEefCI\JAJ`yxZZqGcEz]\I_\FMOwEj^\N`ED}U\mZpUq`fpScGOiwyveWXEnS@Q`}vc
+jYsq]q{]XmznDbVKCrxyPhAr_C`}]HYpMB]DgVwj]aSrtHndZH\drxudI_JgnqvAxQRKjv\_W[b
+JhkKIHUtWcw|CB|U~hbu\[mnkcVCSiK^[O{h@xQGHd\T@FC\ZihmeZmKf{a|WJNICD}Oncur@\
+vj[cx_xhCUJ~BZnsVSEnJfbBljHwvt`\zWYm~GZJRbAY]bMCmoLG~Wqmyizv}UJyhMZdOSRrsOG
+}|XeUozJwUf@GLnHmpq{CHKulnteRR`VXiYtRDv[hUAB~PFg^vgAOe~UWKliBc`IZyyeQMK`E
+CpBi|ADljGVYX|jYaesj_KmtHIcej^Jg`wgNo[OQ|UpcnnN]Ij]UrviGOFarBhHFDyhbzdw
+IKEc{pWxE^iWJdmZ_uSyf[p`k\{Or]B\ze^uXK`lVWn`amVNu~`z`^LNask\cTVbKdqXMDwx|
+\XXN@LFcSyQzEGJdpr}G\R@UpeiNddVHcK_E}GMNxStjpmEUyXM{o[^gCdG[mCmzW_gl]dYy
+]_EsPm]@FmwoJC~}c|\~rkDh`Vh[WwxTmzJMHTnYMJbXJORQKC~G~]`^]HZZym[VXXu}W~E[R\
+tHsLXoQIW\WkXvxfKc\]TKL_FYQZxGyls^co]ke}]rcu@_JvmqB]lpoTbnIYqnIwnTQJGAJl
+Iirz@QONFDEHUeFnmodkyfEGBb[w]XsI|lresjRpk|F][LKIBr\fcszPWMKJBpSWt~RSjmGUAv
+EVvjd]wCww\oyFXSIwl`p`|\xNBlKcraFebsjDNiT{cjqpm_yEKUqm[rBas}|P~aV\oKQsVe
+bKeNbkW{h\Gp{NViJFK]juFmHXu~cmlbG~~MmVc{mP[tqjhwJ]lyw}qK`kBWnsldBNONM[QRet
+H\eBC\YwqZuBrp|KDbDxIiVBeg`{s_to^dS_[cnvYkg^Ww[hUXpZyxETZ[FYdWOruwjFz{dAv[
+s{VCC`MnzS[CgvGGV_kX\rdyeEyGn|AecU`lioGxqZcWltFceGRR]Z^r_xTuWSk|DojHLZQd[_F
+|k^dFpiTBYs[@@sp]D~TiIWiPr~ZwFk`ryDMbM}l~IOFGOiLePY{|}OjxxykoUZLLTSFUhay[
+Rc_mvXbhkdBvVRb}Il\\iWmCsAm}[oRa|hvqRfCtqF^bc{HMs[NVYhkcCq@TBgFFVsFa|ccV{ZZ
+i]]|rL^qH[lINA{~OQQUGY^uBTO~gJiY^`S{`gHp\KokmVEszNR_@Z]TgcJ_r[fF[rVG]VumQ
+r{|^Dps|pHDsQeIqbaJh[i^OZ_bdLGOqRPLFvgaHwpJ\pGejVbchhYBJnIV}to[xzqAi^_Gu[H
+]ZYcsMbvGGA_j@iQqxYok\UTy^UWLOgg`[o~WPAKKd\yRV@}|AuzVpl\iM{^{DEN~I\NUDGQ|
+MeJFY`PnGGiDxunUiZrUa\CdqMtU|Up~djIqVcrNUeo]o`ueWZiEAss|o{tVQEqB{GCjxsZvTZQ
+YmmQsWUJCSHSEymqnZ[|uNOUKoBVdb_aC`dDGrhKGopgfx~{L|lZ}ojmxKeojgAN}XQvcNOJu_
+sllbAWVA]pALR]oCUeX[faHTnJcvhWDUYNnUeIeFsx\kDaFRUIp[Gyg[}lunvnYHfak`WgoTqw
+mKAo_nr`MFzUvfs{RUCu_zllQpl|y}iZWEDC{EdQDtqvOJFNiCuZhTfoVbA}iGBXB`IUVjBPAa
+gjmzvtF]fZNN`GcSFcd_UIwLeH|d~\ULegq@E^xcagfjij[MMt`^ktuBGNweVygLyptOtGCt^ZR
+|mkmV~nq`l^mD\kj{GmXDwNbumvrmt_ifMPgehfJyMF\bDn{vpTO]{ud_ta[a^zEdIWKaLjvXvG
+XjAzUGjsV[r[JKR@oOEoIBaV^dsxAbf}vFiJuvyHuZYSZGwP\XG~UiLkiGsrchuY]CxmSDIg_ZX
+O}HUTS|Tl^{S^ZPN`OHU[KS_oHBizybhfHFKgZL@XpXuuJKuVkLV^x]xFLD@PEXqW}hTTs`dUZ
+n[{owsXUkuuXPwDx\aTR\KkqUPR~h}q|YJbUg|RMYlpm[Xt\RMH|qtIKrCW`olAANooUZbwURaz
+Q]Col`B]HyEPQ|lj]nCewiYo\d\fOXQ|l\yTz]UWQI[x^KTj]C]j^R\t@I\ciwfqpj_BD@U\JBt
+r[nsW{BCPNA`lb~LS}NGC~UMaEGbJiQLZshEEfjnj[PaDy`wAz]RtoD^bMRXrsEAGDRrM}Ko_
+UjaOvJfjm{vpuwRXBVKijDkPxPdSBXMKqrMRfJNP[_S[lhg[FGgfI]QX[KcnKs}MXpOJSXtpgaI
+NgnUinuXM|ePMiBJJOJQwIXNuwq^WUWxTUT_DOFOqtszMS_fNU]@H^oksKtoLnemvsuiFQxiv
+ZthOcovn{decvVADGc`qhbL[uQ{VIvFUmcgAKz]uNiqJRqrMdEsxYH@G\D{p_JmHW]~Bhtj[bv
+ObO\PFcCPdQRuJWpFoO}`v]ZVIatp|{\WOFtwJ{RKubXazOzrRC@LOR|p@hUnMmqpVgzh\e]~
+aAMoJFGurCw\XiWE^Wz[qubacNq@eIB{[riLR^dzp`VEOvdc`odN]^L`qh]m|SJnIJG~dTgVewV
+IGlFYgea~Wwth\Y`OX]BGqi]flHh~LK{`anMN^GC_xVOkyq@|dcoKEmZr_r]hjMccQFY}`XC
+pgawEgKTv]ythxQarxehgdiL[vizqPdCSOvLiqhP@{yML_pHknqsruvjIiKQZrrhDtkFfaN@GLq
+u~sakH}MzvN]xe{YLrmHVBmBQQg[Z~@@jcGxu^sIYPfJxRzt`NIx\rK@jW|@o^sj]tiIIR_bNoX
+L@@EaQuCBwY`szY|UTig_FW[]piOVIfKdGCHgGzHwzDeM{by[`GVKaAXxq_OihOs_gvnQRyhBDw
+dGKpllCDInIEP^P[`XlPZ]x|isEavl~MLdhoYqr[UcNt^e^l[ghhw[]gDFSEgV|l_C`ut~ZYhU
+kYuA~jvez{mpOtNp}DA_OjSbTfE_khxlYG^\mSQ{B[dikDIMgpFx}xyoFeV@kv[RDtZoGvWwG
+MV~WEu^aIrRtrZ^lM^EJy^rEokspIDX_\INlrMtjLg]PS^mIQPBRRZX@J^nIshkJrEJFXE\dzpM
+c}KxkP[um@jdAmaSwlbaeAbBbfJZPOYJFeMH@{Np^Lx@|K~i]zfVcvCcptAUbVNUR`TOMGdjHKE
+LbQy`wzPOO\KOqouuWhG]J}E{mABy}K}_zW]ENWkF@YuJIER[C^NUQi]iOc\mD]^vnyiurHKRpQ
+\dwfSzJnK[WZLTDMa|O`tcgJmmdZ}{eiXuCdLDr@XFO^RdioETj]IzCwfrtwCrl^VVGGzRH\zny
+luN]{Tr^bR{dUUXVzsRB|GSU[wZIRDcVKeCyma]fk[hmjvbhFxypKbCPojen~UvN{nTFVYM@_
+ocRAWxhLOI_E[~ZIPOmzty}e|xMNeXYRH\{NTBNc{hNUmz^ypej_ZBGCXIIRbw@|SguEezzLA
+w\UT_imvDy]zyHr~sCxYL|kzXeb~}H}^ijgFnNXqTP~WDSGOEzHSUIfeZdIr]gmVOUnmZ~lDHH
+lred_bTvg|q|xe}tcjopnmvq`[WEi`BLffQ[iwmMSL]QLzEcm`TTIO^FDG^`rDmcCDJcO}^}cBw
+fC]_HkiwWtRk\uRgN{VWn@KqKH@bdsp}CDklvROA{OJKmr}tqzvL]KkFJvH[WDFn^WDXlIXYIJ
+YcpcRXA[ngsIcxHN@sjzIs~ZNEam[oQLZanft{QWUKZ^jCsGx_|x\[eKkF~per\EmNNZXsgdjpP
+DNY{|`@IOeMh@H\\E\cvUCKelK@cwIW}\PkobdwYRRY}}Fi\J_zSzr]PX\BN]UXMz[_QaxHEL\W
+okcpDnXUzqUn[C@OVWveh]`{nGEvv^w{xL_fQq^DAFYtPuzP\^Nz@T]VFgaf]wy}CiVjEb\N`
+PFy{}x|JnfRruq{mrlCyVBZoa~{y_euBGdOyfsHsjBU@E@N@OSEQu|oCumzN]uMcN|zXn_YOl
+vLY}cWOiqOrvMqG|KHvbehklyBEOLOqgifQkmQpRrsL\aUShijIQQSAEhnpxWm^g_bDkQps{
+U`\dy[IkMOuuieSh}gBbgsNwHBH}gGivzvbKrMikFK|dU_xOUFFVFWebdSyID@X\^v{Z[mDFXB
+PwqOmfPdiwikfi]gyxOORCLrX}fS{HAzBYJ`q[gggzz]N|ikoueqZcdcQt[{V@gwKZGKBkjNFSs
+x@B]dczqQuPutRXBbrBJWLwpkpmclm@qVwvVOi^bPycx@bUDFURahpB\|PhfkjzIwAh[nCYdec
+}u{oZA@yoIHK{meBgc\Rox^eQeTdR~te\kLjrUEIgW@YHnn]IbtKHxsENesU|gaQbt|]kGsCES
+eU~h[OhGYRYYcwMBczzJfF_g|FGqyCBgS|iRgGRdZE@IjQ\`ssP]ljrHXmCEo`AoHSp^XeBOZj
+\u|V}meefoBMl\oBp|CpzmnrsstNS@WPHqYY{y[eKj^zJf{Cxjo_UmXwZtBcN]illDe`wp`E}
+lfKh|mlYREJTllI}|TZyCYiLCONR|LwLPmbQCrQWxvi`\N`KNikVaiFf^kI~PFRQJxJXh{iD}R
+|p\@A@GEA`]]i^Jcm\kem]~TtBFd@@p}efkeaUkUR|INGObugjYyh`M[hGJ{U[Be]N^j\hggEdv
+peqfqMuN]lGd|WsLIt}O@uWUFfm{MvEMaOfCrLHWBCtK[[{Sidsluv[MshgiXCtqhyrjY^kifEg
+WE`IMMxNYSBET@KrmRrj^RjWd|WXVyjYNcatXJbCHDTP@~UuGAetiiiawefwJe@[pUY`Td^b_g
+G_kYPOqN|Gv{HlL^eYE|G~s|_BWZsglfzITWlLkeplJmhKAI`ypJB}]_p~pEHGD}EgUe@yIU
+ubKQGnwCqLUI{_vIZbjuSccymO[zpVeW}KduhSggWTmx~BkEWFhkFKFaELy~[djxmXQkeQUmO\
+Rm]rPNRe~ZX\lqbk|CmPbSt@`}~pu|kuabnMPkfNcLD\^IUnOqi|OIvZZXYinPF}jdRrXMOfb|
+O@IBn_@VdcOXmm`owXrPk|LLasHdnt`z_sJvR^lv]EQAug[~KWWIE[|VCYbFDYn`a|D\HH~MPEm
+Ztd^IXalWVorvmw|hG\VRFwDAF@[}F[bzPo]Wh^aldPHKDTANyueZI{ZEcEw@op]\vPTPTxk`b
+bklrHQ]whZW{B~gqcv}^ZnGsyKosq[MOnBlz@KxE^^^N|oz^LQMieMb\izFiA|luyRURDH\IDDK
+NXtszjF[tfZcPeUWbQ|[^t\xBt{qiX_ukqZnvgwtYhR[ljdTmqNmHtJQRVH}LfsbZXHpV`^N`Gd
+_ssYw]plR_ZblanYxU||IhmkeUzsi\HHNT@}DozYxOOiuDxjiN]nSUuF]kl~YZGv^_vItSVMR
+|jVucd[tw{U@IYIxvHxVZ@vUDXrEcgcmVwZwAVlJSJxRBZJGxSg{\mJssevkXldLixr]nZH@HxQ
+`EWUqQs^gRXmCqVH|ZHFffFHeYPULPQeFGGr}tTZhqniaIygwqZO{{G^_tKGJzpybf_RAGNnn}
+SZFC\ory`IG|siDZVvMkwiuXy{DQDJkmpMz@G@k~VU{dFjP~DLx`MOGlOSXS}FdzjtOgcZWsDC
+h\OEFUI]}F_ZBsJ[pych@iwkzmVZT_jhNDK|DKe]{DOnIg~U[g]TNsn]YMfuhC`UM_Q}tDKz
+tKqrEKnhxOT{PjTv`{yLNf~PObsuv{XD[ov_UyZa_leXydIFfdMxtar\NW~UqB|UDalZy}MtRg
+Lg_IX|uSuQ}Rgwq\mKeyyMi}K\TdcPgFP\@BsAyTSsoE]][Qve[I]KnQngTrBpYOxP`cJGys
+gZYiVWMCeM^Myn}Z`uTyTi]hxkX~aKzk\dQwdTiCWB{mP`{rD_}G_k|jJUZZYWd||Yvvnd[Xs
+Pr_oM}iJVuqlvI[nRfADPTPMzOGdbB[jiqRtu[qpT~uNoRONC[AH@ihVeW_B@q[Uclg@xy\LZ
+eX^sEwDarWCGwqLMSfSUxvfEFn_fMfc~UKawZVlsTCzntbBbvD[jCOkd^\H`mkavyiNLBnbF[yN
+[nG\RbiBlOe|LrIDx`|{ZiW`AF^T}^{YX\`~VUftFQLQsHIp`MXsdmiltTikH{zbp|TLXKhr|Ru
+MQILI@]oTCrYxpBSOkItuImknRZabM[]H`dOwExta||YzZ]seq\|]KtMmW^B@lHGjP@T@xeNLF
+`UpSwGnFcSSsVYTGBg}ITiIhKYMFOn\EcqB~GBo[w^LnRRsbYZJmMDjtfY@[Vdzux^V}qikwcZ
+WGm{SwVmHFbTjxDLzI`vaQshivUw_aZXXKut{ENcWqq^yR[EMkVwiDznujx]^}MQ@DI`@iOiOri
+iupzr{|eJaRgXfqyLdV_h{^{_i`\K\aBRhYlDdBrHW_s_EhufHyM`BC}\`^RGCat`TG_OegSOd
+nlfVCD_X^pBYCpEC`WvFnt[ockXn}`XgjY@hxnj}wZTO{dlmHI~FqKocOiE[rHsns|pLLV
+@[bWk]yFsSBmSNtoIRTuBowO{YeP~FyjO]|OV^TagYU_RRcSTTLlyUP@J\ho^sgUDYqUQcq`|D
+OVRAcVrXpp@PDG~f_KOZ@XW\sDFaIfv}Y`SUZY]]ddZy`BW]EL|NDF_Mqjma`VspyGsqdwPxvI
+pg~Txiz^VE_ChbxnxdHayN@@dOnG|Jfj]JiOdMiYTxYfY\|@qwjItze`GFetLODdBwAJ}JKrFY
+rfpi{gBIqqyXevdYYvLzNC]@|nH^\oO@WsJmJq~lHSWwjLmRLz}ZCRw~su`jyJuic\yHg~weov
+sjVMNUtjk|eW]IWateQhuV|GKjwwsOAduYlW\ul\^Rb\RcqyYud@KdspD|OBuWO{r}ylCcaklW
+zD^nxFklnEL`sOsNmD\@Lpc^U]Qny^tDCbYmwXJ|t_F[ztTen^JUL]rZt{sWkn_z]NGoAr{OzG
+C_]zVqN}M]tWwnTv\hevjZFE[glGCCzAw~zzSUWGXi]nL\gHsiqn\VYAqNxsujfzZtBcw_qALYI
+zfRAQSC^E`O@d~xSjU|eOiiwGUIYNOmddBfbXC_|GMSBLCJpUQoF_tGejuuTydvr|gC][sei~
+]ZdByfsBX\SO@mzueaoXhumfGXXspL~jZsPGZwkoe~Fk[mZAQJTnC@xz~OrGQvz_GjupelVd
+U@dn{uNzWeifEM{vKwMJo@dAxL{VKIwGVF]RYeCdqH`L~vq{j\[\ZLFru_u~huvR_rbiYtag[c
+dYEFH|t\TEtCHr{TuXjdsgI@IzdWxP]@AN]NksH]w_okuqW\mUBoB]n^ol|nwSDC]P~|kC}_Je]
+lpswFZKnxGEyPRDPNv_nO\SuyA[EJhZ|LHHq^p\BO{S~`RCO_SlosXx|NIIZLE}rc`yUh@WDN}
+t|E_FzZuYgUCYRoTPhI^HdBHIqC^a|DzEkGa~qAlSC^L]zsMJldCsdlqO]mctn}wrbQumt^IL
+I`ATpqY_K]iVfyyZ^LblOnDyMZyQ^AYXW{hlsYxUeTVSlkEVJ\^Kg_QNcRZDBX|lixhueEWx
+]WckZY~RuHy]mULgNTkTyPZsv]JxAAd@SYTL^MMefJoVUx[LT\\eLHOLVUGrA@Ou{_WjmBfPs{
+fHopnnapz]U@~KaEoxJlkGA`GUw|w{PQU]HGV}wt\]clwqlKRejgh]mHAXipR{n_@igu}ZPy\jo
+vHD}fKYZhGAELN@gQ_x\bIloQexRrCJlmjpKRLmKiAhKyQv|RJf[mtVrnTW{JiJ|rb@HcJUHWv
+YlOUBadvUGAgjLLNDmgjQLLFqEEM@}|VwzqfeKwg~GOdAfbTtFtVqdiRbd|sJxP`I@UckhliNSC
+MrspYpSmLYyvXU~SG@ZEomLNIKtA]dj|kG[ku|teRm@VLgwXsXqI|xYRkFuSwmFKsQj|FOLe`PM
+lCe``CEr_stx`\Twyt`Pt@]BI^Zp^UI_lEOeleasrlbwUe]~OJmwSr`bHVulD`GCG^B|TKXdRBN
+uZdyP\Cn^SmVgQqAU\DYf|ksNzkNBA\pP`GWK]ZrcLXanQY]BwwOv_^{|E_O]h|o~fSwbV~KNx
+E\p{`yy`~lIurSUh^dDHHrNWmAUNHliKiIWiz`BQ|xLp|BSRuUn~]wYD|ArR[sdryRkmuMAmPWE
+bJcmEkBwFd\{oSUIzZPQ_dYqGUw^ctioaAvhJ`E}QimkLQWUwlwjjguY^F]yLrEyGUyGDg`GUZM
+~WQU[wlt~]qMJee{[W~vGhdnTY\ZsT[jvUIqrHBc~fLIegs_dRuzjzK[OhHRhqCjfJv{QmDJ
+nj{qztYWdZtrc{ng]m}uEXSS{t[@KUNbpD\XsxW}ssNDhOYOVPtmzDsNwk~YKj{b}~\xKfix
+R}oqF^WltYLZhGdynOwqCG{BSAPE]{u_Xu||ONEUK\SJ`A[@R}xt^}mFor{tuB{[D]Jffo{Eb
+V@ICkDCwcB_OsUOkTzfIgh@GaxxP]@WChxxulRsuAJcF_}}R_c~IKbQhMOwoxZOk}inC@aWF`
+ysrKP\j{[EygeNgr\Z^}fihRgLfkm~{gvcIiHJH@uIeCO|ZESrVQ}blfTJA|szhOz|ltnNjaH
+]]HTsJKdz[efm}YqXiVpaM[mBYqq^SqBfcsQ}Okev\fSUInYvcr{clkooPB_S]JiKxCL{]oJar
+nWc~pho_UaJGxwCneR|kbtXirAIbrrZiQOk|U_^iGyvoJWgH}tnPoqNfeH}KLwYiCLmwmJcF
+ybM^OeuEVcTFNBtpuyzpCe{WvJkeyTwOcskO@oeaVSgWSIxOnYAXAv`ikH}ET]iEJRnT]VQxs
+N}mRQc\sDWwnrzTXWazTB`DO~b[Kk`^EcChR[OcSO}LoWqE~oPlusPPwerAKr`\]XaejqeDDo^`
+sqqyDytvVG^dSh{dHNIw]dOWZYMAJHe\WnIcA@uYoGuzwzDoPAhbhLFFTrCLYVBOd}DlfgCp}
+t\kGuMaFeQftjiGW@qJNECDZhTpLWz\E^T]PMchnu[\PgkOFEoUakeacIORZp~ggkGfr{{Dkcz
+EnvZByqUakL}_iuxSjSxKTICaJkQdD\nkQVrDIjmo}ONGK}aoCpeMS^{zkYD@wiRGJD|NA\^A
+[Lxb^Jp}tmNNVFTemdsi^TQZ]BeBWK[IFY^_ECOviefCKUrEhuIgPr_zcFSkgPtebf@}wBgRtBM
+g|`vantMje`KItiV`kUKF\yE|}b_ZbKHh@pCC\jpLTlscGsAYZQcrAnWjp^iPjVDm\D_sYMkcY
+xfTi\FVbMv`cH`POreBQMA{HG^RjWTRmY@I^dFTYFlX{FK~PE^jQ{d]J^oR{`WO@_Rip@KIEfSM
+}}JILBPjRxXnZcpXjYsZsMiPpNCDCPRGOuutHWvSfakMeIgPolHnWe\zA_BjNGk^fvPKL`cT|b
+O|{W]Sk~xDGUQdDMmWarkpRkTp}dm@QOkkfriwZ|khzfblIspSpqGBudYgc}EjdtRr[Rmq`nNcQ
+swqOOLL{ij{h`xuwASOOBRN{w\ko]Mf]nVvR}kdluzgvhMyvubxN{xecqs@pICWgs\zTF`@TxNp
+isy}RSg]s\nbJZkbeUyMphoJpI`{E]fdPfb`hUVHEpQ_UjUrL\oHUpnPNlcU^]ZvfPiiuljNIvR
+vFelypaALrAcc{Z\WO@oRdkRvQJEelzvpniEVzBeLR{RxR~\aW_kd_Unv_cyvm^OTRqIgOnKs
+XNM|AWZyUQsvkmzri~zIKz|mwBGv_\Cf~iSr}gBqe{unzJYuUKnC}ixFEE}UXat_ggt_Neslv
+jKo{nuZW`LKEb{zmwg@mr\Uq{aK]{Zk\SRnea@OAwjwzwA]cAzfjzjmgmKRTl{m`Tdl[\~WiLt
+cc@|gnheynJDM[JmPygQ[KshG`_e]lGoMU|fKpSaRXWAIriLpnGilzqAuVu^ItFLpAXOgnAuQ
+cxzCqnjCPvvSaPVCtfwfyg_oqj]gDgEcTDItxny[JlNt{KoJecHsJ~sDUAjBbeOvkxb@hzuVVJ
+P|P[@FeA~~H|bAvByMqQtMApvXrOpIeArxtsJhBob^YTLBhloppOoJ]nHwPs|ZxVyyyMdECRFD
+DJCGI}EcFZVMQDd`kepRLGM@@\FGgvWOk\w^nq]EvX_MmTrmvujzLJoZbcFuprgCF|gRQCO}P
+ot[Slz[BAD[N\DuVy[dTlPXmUCuNRVeI`@nX`Qxs~Mgqw^VwjETFv~klTVDc|iw`pqYT[eZinJi
+PcgaRwrLTiyzCOsvKt@`R]@|i\`FyTi{MLx^kJwjRvDH@UiTBPRdGRap@Ozg^VwU}rHc`W
+vgcSFfJg\eZg@EOgwP`_w_zudtWLNa[|mjkjdFSl`pGiNLCWpYHJsSnPLog[yT\VsNMvaQ^prI
+sCe^RTrNjRiXYM}|uTT{NIFreq]jp}|gfmZlW_UC`gYvLWIUtffYyvICRLgdYyPb~SneevG]qZ
+XrA@XANoguvXb~bQ]eQje^C^X]K{^GANf{jQoBPdJb[UeqI]\Po\EIr{Ojmj\RV|\[@J[HFPNpu
+\~O@A]ern^a]pBKwZkz`eHIR{AOBszQftxMzooL@VovHxoQiVHcoLBNgwJKMbqb}laiOD_]go]
+muddDj^j}AFt\ICKSRTOK|GbkBQZZhfQL]CtJO}@ZlZcNwILCSp\Cpunfg{RPsNNbCxAduUZA
+Ico_dJK|AeZSnVqHG|~{k|f~YRSDQjvep^oilkhb}ZGoLb@srh[ATsdoxynXgNUTeq\RChkw^U
+gP]k\IHmpmzykBhsiYpImQtMovvTnNMtt[|SyJaACdS`{iLcK{@dQzMOwesuMPoSBlJShCIHUL
+VEnlqwspkJdRnFMsx~ttmzVzViUaun[GBu_gCwXjV@t{T{yoUNVJ[[EtsuE[KkUWwoM]x^bXhwU
+Pa\xzR}UpUHMFeuXIMu[BioNQHJExFq^kS{NgNjvNiBd\K`RUdxp`}BWio{eIjJZyIqYkC@a@L
+WIDRxKmTNr{Yp}xy\qmesh]iL_khhPBaMD{R\jLVcobcNhS}obt~deP@feKcBXWj^cSMVmv~G
+D`[Zx]UG`C[^\d^kWX^}MZEHhMzeSWO~tcKGoVSAdtvp@DwBu^qpZkFe_}{T]VeHLr~]vHxTAu
+x{yvNQ]B_h]KmACWPl\nyRuIwiCf[rSn`eKPEGfdwaOGZ`naQRuzgivSG{l{yz@\vVAWviSrA
+\on`gIUO^jF`qwgsbSRdC{@q_FOkka|yIaarLzcoTnMRbTIfOCH`p}TkRQh^a^[IpOkNrMMRR{
+cSOucjs`A@qB~yRSkTQk[DtWLSZrgseZiEFksxy_USOAfbZuEEffe]IYcFqLiNlJqGl{FDC~U
+myZGaWwAoATBdw}mnUGk@EuYDba^gfmdiBjd@rIxxQeRG\xFUK`~^ZI}z{U[Pq{qeOGOxtoE^fJ
+JVrIwEZr[ClBWRFWB@`GuN[Y`vMWUXIymRzQRJOcRtCPjWeteDCVqvjiIvja@epiy`y@xXLi_L
+tRwgeyqMOEwiczQ_EDnj}upxKy~Pvto~IixfO[[B@r`[~zYwASGo~SsAwtl]i}U|ajI}V@y`tgf
+vzNJNivhlsVAc]neBuqZ_j}LjfbHkacuG`UYSBVTBj|LZSK[nq_hjTxQVIDcYMW~gEJkrrak
+@Ivj_dRVvatHGQPIpY\BMYY]KBqv~hOLavvzDwvZOZmP{YVHfgB`|s^ir_A_]kcdE`\JioCuf[i
+YetHB`_cHQbEuP{XfPfv[EqVxyVqb[up|AXJ`DP~cwKW_RDlsNmiu}dwcipSnuyJJ]cbX|Lsr`p
+xVkzWrYaWTYwwXFnVxBPTNuAkhGYTU^}h~yTzIPTq@IIspSLEwckKE`JbI@dqsqoJLOafaFi
+K`JwxFDhpvpQL\G_}AuJEbcwCSPoKRAgLMSFF^l}pWz}z\hNdApMlcA}l^G[uF~`sNlgyjfnH[
+RmtzfKbsTQ~TPoVGoKuQjGGcsyCgguTj}gM[EIuLJ~jyzH|qL[fKEy`StIi}pPz[eTXvrQ^kn[
+[cH_@nbL[U^^AHfQaW_{U}BcVOOrSZT|qxUEFOs@XmjQh\snL|DWDlv@x|\Ye}`RRsXPvghgDb
+Y@AllgsaUM_Hbc`dIwV[lxyzrjDLGqppMXsxWWZXikC]ZWJuMuVFFb@eI\~]{\w]Gwa^Lh@ozW
+niOFAmp~DM_Viiy{wOEDTiOOZmundOMuVZUm[llyCtIJW|aLh]|{TkcuM^lBuRpMFe_rIDSOk
+nBTJh{iGMHo]\^@z~UoEbwiuh[A[e@esHojU\aV@tR}Z_Y~zEHzb{Xg@Dih@Vp^BlkWeUj{n|
+QuQmQgFg|gzlRvTQ`fvmw^_Yc\hXlbw]aUXPNRju\_o^feXX\hA_hxVuJu|]Ng^B}LKtvMntkVy
+IdQXgUo]KeLYZZ@v~{mpvvn\~ye_Hc[jnJuZIzvkRUCwCxKB^}cRul{v_Z[~~`VRw^I[@Bgz_
+ohNgVtIPIqUMjKNDd[z|PTHwjDrfkeOFjQrgd{ntEyZ^d]gHIqS~hu~F^_AdgoktMSkVD[Q\~H
+HwRcaCOqaE[V{H@aHn_gcZMvim{jwRNlD^dYMtlnlQlgVbItb@nFcvoobeViCOIV^edOeMqGNb|
+|ofLYQYpVPNAxr}p\\^irL^{wRpAEVYPJxDNDP_saHx^{g]ATJAsTq@a\MNF_x\inXNWos^[lV
+RnI~mSszTsqiEd]vH\{ywQiH{lssJenm_vWnVrOEr_K|yYogutHiIsbUkov@lLf_YIh|_kewA^
+FoctLn`PVGhb[EKoevKEn]Gy|P[x`jlge[KaTKltNulQ@AOUyU]Hw_NTmR}HsZBkuxdXasGpt^J
+hNKt`XFArRRgPbu\kA_Q@H@H_\is]KrtnSjMU]u\rdFh`DrKxhNbYzgGYYu`UIagiw{]qhCyLrg
+CU\]mgfG~qK]hRJmGAyh\@nGqa~LYejmwU|JhEw[hIw^C`VjeeePAPrcpI|ETwgayXRVqS{IO@
+HS}J}HwjWXTqlZ^KLzAicQ_kaUwCvdZsur[fouQmQQDaqunH]qy|M~`lGsqc_E]}oRy_|rIn^
+PMPGtiCsQiTPOrNksuAEvi[SjRe_gGUgmQMVL]veCvmlQDEuHofqjRx_{ZPRQJx}jOG~Vw|cKH
+@~@RgJWhd@oroflpH[lOZci|h|Mg{VOsTeKdj]gB}Zjo[tjrEoe@PgAyvpUSa[NytnguJcdKfbI
+MoZsJaBT`OX}lnShYiJ\DptJ^~{oUZYig|}lnvfIreD[MjUNMzKPj]oTO[uFoCcVWdscR[lOX}
+lfc{\WTYmsakm|OG}jjxBWR`fKq|]vV|rKZ^[cOrHxGxzUqesvzo^Hc[wwZxpg}jRfzsz\H_Ala
+fNx]]]qPquR\DbWNW]bQqXCLmb{ivJ\iRVfYIrZiv^qvxREZwsiyln]ZVjK[oNWjxfF@JkmQY
+o`sWPVyz[Stdb{muFtUhPaSzsoqA\Tk\zNHoRbtR]RzMDD]EpqvuTs{PvlKUKrVdmXIUXPu
+YtQOkoiMRScwba[fKUwA^R{r`qG}go~{QYlB\AbUcTyO]bVetZT[\WFxoQKRpdwX]YSeaW~^X|V
+mk]YlAJbIx@\d_~]Aa^LNwD[Yguvi[Al]oDCwMMsruhJ|G{YP_gOfGKoKEWO{_`LTjmMcj^WI
+Gv~tQVrmNq{pFySs^kcoD]jHHOuSrxlt]ss}jlo{l\S^BeawpfWuyWOojdYi`yCxBs_B@peSiv
+ffeQxvlHCKwpdvHDThXdN~H~Js_zpgmXSqbwXk|KEwHFi~r^^QONT`Pqf\ClVNdiVpQ~TiVtc[n
+QNHdYm[\VU@}Qc]H`QryG\WNgBvTvNNH{_ReydkLWJ@DWycW`|~X^cusNboY]EbWU[qPlEBF
+NAoZ\Au`xIJP^GA@gjxvp{]`mijzW]s]rEccV|anClac{|iROuMwuzrZXMhpzxuhjn|nqmDMyS
+jeNqi^z}Yy]MuZZyTdRhEV[IB{Hgf@Lf[ry\RngwJURMiMzRK`wXHFbbrj\r@]lR`VJ^R\y~OJ
+m|d_^UlUw\rq~_v
+%%%%%%%%%%%%%%%%%%%%%% End /document/einstein.jpg %%%%%%%%%%%%%%%%%%%%%
